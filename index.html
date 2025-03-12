@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>AlgoMind</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__logo">
+        <a href="#"><img src="assets/logo1.png" alt="logo" /></a>
+      </div>
+      <ul class="nav__links">
+        <li class="link"><a href="index.html">Home</a></li>
+        <li class="link"><a href="meet.html">Meet Therapist</a></li>
+        <li class="link"><a href="suggestions.html">Suggestions</a></li>
+        <li class="link"><a href="article.html">Articles</a></li>
+      </ul>
+      <button class="btn" id="depressionTestButton">Depression Test</button>
+      <a href="Test.html" id="linkToOtherPage" style="display: none;">Go to Other Page</a>
+      
+      <script>
+        document.getElementById('depressionTestButton').addEventListener('click', function() {
+          document.getElementById('linkToOtherPage').click();
+        });
+      </script>
+    </nav>
+    <header class="section__container header__container">
+      <div class="header__content">
+        <span class="bg__blur"></span>
+        <span class="bg__blur header__blur"></span>
+        <h4>MIND - STRESS - RELAX</h4>
+        <h1><span>MAKE</span> YOUR MIND SHAPE</h1>
+        <p>
+          A modern, effective approach to
+          mental and physical wellbeing.
+        </p>
+        <button class="btn">Get Started</button>
+      </div>
+      <div class="header__image">
+        <img src="assets/Brain.png" alt="header" />
+      </div>
+    </header>
+
+    <section class="section__container explore__container">
+      <div class="explore__header">
+        <h2 class="section__header">EXPLORE OUR PROGRAM</h2>
+        <div class="explore__nav">
+          <span><i class="ri-arrow-left-line"></i></span>
+          <span><i class="ri-arrow-right-line"></i></span>
+        </div>
+      </div>
+      <div class="explore__grid">
+        <div class="explore__card">
+          <span><i class="ri-boxing-fill"></i></span>
+          <h4>Strength</h4>
+          <p>
+            Embrace the essence of strength as we delve into its various
+            dimensions physical, mental, and emotional.
+          </p>
+          <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+        </div>
+        <div class="explore__card">
+          <span><i class="ri-heart-pulse-fill"></i></span>
+          <h4>Anxiety</h4>
+          <p>
+            Feel more in control and respond calmly
+          </p>
+          <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+        </div>
+        <div class="explore__card">
+          <span><i class="ri-run-line"></i></span>
+          <h4>Insomnia</h4>
+          <p>
+          Helping you to have a restful sleep is very satisfying and can have a profound effect on the quality of your life.
+          </p>
+          <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+        </div>
+        <div class="explore__card">
+          <span><i class="ri-shopping-basket-fill"></i></span>
+          <h4>Habits</h4>
+          <p>
+            Freedom from habits such as hair pulling, nail biting, skin picking, blushing, stammering, smoking & more.
+          </p>
+          <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container class__container">
+      <div class="class__image">
+        <span class="bg__blur"></span>
+        <img src="assets/class-5.png" alt="class" class="class__img-1" />
+      </div>
+      <div class="class__content">
+        <h2 class="section__header">TRY MEETING A THERAPIST</h2>
+        <p>
+          Led by our team of expert and motivational speakers, "The Class You
+          Will Get Here" is a high-energy, results-driven session that combines
+          a perfect blend of mental
+          exercises. Each class is carefully curated to keep you engaged and
+          challenged, ensuring you never hit a plateau in your mindness
+          endeavors.
+        </p>
+        <a class="btn" href="meet.html">Book A Class</a>
+      </div>
+    </section>
+
+    <section class="review">
+      <div class="section__container review__container">
+        <span><i class="ri-double-quotes-r"></i></span>
+        <div class="review__content">
+          <h4>MEMBER REVIEW</h4>
+          <p>
+            I have received a great deal of benefit from being listed on your site - so thank you for the help and 
+            assistance in getting referrals that I would otherwise have never connected with. I appreciate it! Keep 
+            up the good work! 
+          </p>
+          <div class="review__rating">
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-half-fill"></i></span>
+          </div>
+          <div class="review__footer">
+            <div class="review__member">
+              <img src="assets/member.jpg" alt="member" />
+              <div class="review__member__details">
+                <h4>Member</h4>
+                <p></p>
+              </div>
+            </div>
+            <div class="review__nav">
+              <span><i class="ri-arrow-left-line"></i></span>
+              <span><i class="ri-arrow-right-line"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="section__container footer__container">
+      <span class="bg__blur"></span>
+      <span class="bg__blur footer__blur"></span>
+      <div class="footer__col">
+        <div class="footer__logo"><img src="assets/logo1.png" alt="logo" /></div>
+        <p>
+          Take the first step towards a healthier, stronger you with our
+          unbeatable. Let's achieve, and conquer together!
+        </p>
+        <div class="footer__socials">
+          <a href="#"><i class="ri-facebook-fill"></i></a>
+          <a href="#"><i class="ri-instagram-line"></i></a>
+          <a href="#"><i class="ri-twitter-fill"></i></a>
+        </div>
+      </div>
+      </div>
+    </footer>
+  </body>
+</html>

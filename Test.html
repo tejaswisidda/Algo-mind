@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href=
+                "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+        rel="stylesheet" />
+  <style>
+    body {
+      background-color:#ffffff;
+      font-family: Arial, sans-serif;
+    }
+    #question1, #question2, #question3, #question4, #question5, #question6, #question7, #question8, #question9, #question10{
+    
+      width: 250px;
+    }
+
+    #result {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+<br><br>
+<div class="ui container ">
+  <h1 style="color:green">
+    Depression Quiz
+  </h1> <br><br>
+
+<form class="ui container form" action="" id="loginForm">
+
+  <div class="field">
+    <h3>1. Do you often feel sad or hopeless ?</h3>
+    <select id="question1" required>
+      <option value="">Select most appropriate</option>
+      <option value="Yes">Yes</option>
+      <option value="Mostly">Mostly</option>
+      <option value="No">No</option>
+    </select>
+  </div>
+  <br>
+  <div class="field">
+    <h3>2. Have you noticed changes in your sleep patterns, such as insomnia or oversleeping ?</h3>
+    <select id="question2" required>
+      <option value="">Select most appropriate</option>
+      <option value="Yes">Yes</option>
+      <option value="Mostly">Mostly</option>
+      <option value="No">No</option>
+    </select>
+  </div>
+  <br>
+  <div class="field">
+    <h3>3.Over the last two weeks, how often have you felt tired or had a lack of energy ?</h3>
+    <select id="question3" required>
+      <option value="">Select most appropriate</option>
+      <option value="Yes">Yes</option>
+      <option value="Mostly">Mostly</option>
+      <option value="No">No</option>
+    </select>
+  </div>
+  <br>
+  <div class="field">
+    <h3>4. Have you been feeling worthless or excessively guilty over the last two weeks ?</h3>
+    <select id="question4" required>
+      <option value="">Select most appropriate</option>
+      <option value="Yes">Yes</option>
+      <option value="Mostly">Mostly</option>
+      <option value="No">No</option>
+    </select>
+  </div>
+  <br>
+  <div class="field">
+    <h3>5. Have you experienced difficulty concentrating or making decisions ?</h3>
+    <select id="question5" required>
+      <option value="">Select most appropriate</option>
+      <option value="Yes">Yes</option>
+      <option value="Mostly">Mostly</option>
+      <option value="No">No</option>
+    </select>
+  </div>
+  <br>
+  <div class="field">
+    <h3>6. Feeling down, depressed, or hopeless ?</h3>
+    <select id="question6" required>
+      <option value="">Select most appropriate</option>
+      <option value="Yes">Yes</option>
+      <option value="Mostly">Mostly</option>
+      <option value="No">No</option>
+    </select>
+  </div>
+  <br>
+  <div class="field">
+    <h3>7. Feeling bad about yourself - or that you are a failure or have let yourself or your family down ?</h3>
+    <select id="question7" required>
+      <option value="">Select most appropriate</option>
+      <option value="Yes">Yes</option>
+      <option value="Mostly">Mostly</option>
+      <option value="No">No</option>
+    </select>
+  </div>
+  <br>
+  <div class="field">
+    <h3>8. Thoughts that you would be better off dead, or of hurting yourself ?</h3>
+    <select id="question8" required>
+      <option value="">Select most appropriate</option>
+      <option value="Yes">Yes</option>
+      <option value="Mostly">Mostly</option>
+      <option value="No">No</option>
+    </select>
+  </div>
+  <br>
+  <div class="field">
+    <h3>9. Trouble concentrating on things, such as reading the newspaper or watching television ?</h3>
+    <select id="question9" required>
+      <option value="">Select most appropriate</option>
+      <option value="Yes">Yes</option>
+      <option value="Mostly">Mostly</option>
+      <option value="No">No</option>
+    </select>
+  </div>
+  <br>
+  <div class="field">
+    <h3>10. I think about death ?</h3>
+    <select id="question10" required>
+      <option value="">Select most appropriate</option>
+      <option value="Yes">Yes</option>
+      <option value="Mostly">Mostly</option>
+      <option value="No">No</option>
+    </select>
+  </div>
+  <br>  <br>
+  <button class="ui button right" type="submit">
+    Submit
+  </button>
+  <br><br>
+</form>
+  <br>
+</div>
+
+<script>
+
+  let loginForm = document.getElementById("loginForm");
+  loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let values = []
+
+    values.push(document.getElementById("question1").value);
+    values.push(document.getElementById("question2").value);
+    values.push(document.getElementById("question3").value);
+    values.push(document.getElementById("question4").value);
+    values.push(document.getElementById("question5").value);
+    values.push(document.getElementById("question6").value);
+    values.push(document.getElementById("question7").value);
+    values.push(document.getElementById("question8").value);
+    values.push(document.getElementById("question9").value);
+    values.push(document.getElementById("question10").value);
+    console.log(values);
+    calculateResult(values)
+
+  });
+
+  function calculateResult(values) {
+
+    let yesCount = 0;
+    let mostlyCount = 0;
+    let noCount = 0;
+
+    for (let i in values) {
+      if (values[i] === 'Yes') {
+        yesCount++;
+      } else if (values[i] === 'Mostly') {
+        mostlyCount++;
+      } else if (values[i] === 'No') {
+        noCount++;
+      }
+    }
+
+    let result = 'Patient has No depression';
+
+    if (yesCount >= 8 ) {
+      result = 'Patient has High Severe depression';
+    } else if (yesCount + mostlyCount >= 8 ) {
+      result = 'Patient has Severe depression';
+    } else if (yesCount + mostlyCount >= 5) {
+      result = 'Patient has Mild depression';
+    }
+    alert(result)
+
+  }
+</script>
+</body>
+
+</html>
